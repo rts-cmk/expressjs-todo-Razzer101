@@ -1,0 +1,81 @@
+.todo-post
+    display: flex
+    flex-direction: column
+    background-color: #00000014
+    padding: 0 15px 1em 15px
+    border-radius: 0 0 20px 20px
+    text-align: center
+    margin-bottom: 2em
+
+    &__title
+        font-size: 5vmin
+        margin-top: 10px
+        margin-bottom: .8em
+
+    .todo-form
+        display: grid
+        grid-template-columns: auto auto auto
+
+        label
+            display: flex
+            font-size: 3vmin
+            
+            textarea
+                font-size: 2vmin
+                resize: none
+                height: 50%
+                width: 100%
+
+            input
+                font-size: 2vmin
+                height: 50%
+                width: auto
+
+                &[type="checkbox"]
+                    width: 10%
+
+            span
+                margin-bottom: 1em
+                margin-right: 10px
+
+        button
+            grid-column: 1/4
+            padding: 10px
+            font-size: 2em
+            font-weight: bold
+            border-radius: 10px
+
+.todo-list
+    border-top: 2px dashed black
+    display: grid
+    grid-template-columns: 25% 25% 25% 25%
+    padding: 1em
+    gap: 1em
+
+    .todo-item
+        border: 4px double black
+        padding: 0 10px
+        border-radius: 5px
+
+        &__dot
+            width: 10px
+            height: 10px
+            background-color: black
+            border-radius: 50%
+            margin: 15px auto 10px auto
+
+        &__title
+            font-size: 3vmin
+            margin-top: 0
+            margin-bottom: 10px
+
+        &__description
+            font-size: 2.5vmin
+            margin-top: 0
+            margin-bottom: 10px
+
+        &__status
+            font-size: 2.5vmin
+            margin-top: 0
+            margin-bottom: 10px
+            font-style: italic
