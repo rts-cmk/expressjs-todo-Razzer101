@@ -1,0 +1,242 @@
+@use "mixins" as mix
+    
+.todo-post
+    display: flex
+    flex-direction: column
+    background-color: #00000014
+    padding: 0 15px 1em 15px
+    border-radius: 0 0 20px 20px
+    text-align: center
+    margin-bottom: 2em
+
+    &__title
+        font-size: 5vmin
+        margin-top: 10px
+        margin-bottom: .8em
+        @include mix.mediaScreen(0, 600px )
+            font-size: 8vmin
+
+    .todo-form
+        display: grid
+        grid-template-columns: auto auto auto
+        gap: 10px
+        @include mix.mediaScreen(0, 600px )
+            grid-template-columns: auto
+
+        label
+            display: flex
+            font-size: 3vmin
+            @include mix.mediaScreen(0, 600px )
+                font-size: 5vmin
+            
+            textarea
+                font-size: 2vmin
+                resize: none
+                height: 50%
+                width: 100%
+                @include mix.mediaScreen(0, 600px )
+                    font-size: 4vmin
+
+            input
+                font-size: 2vmin
+                height: 50%
+                width: auto
+                @include mix.mediaScreen(0, 600px )
+                    font-size: 4vmin
+
+                &[type="checkbox"]
+                    width: 30px
+            span
+                margin-bottom: 1em
+                margin-right: 10px
+
+        button
+            grid-column: 1/4
+            padding: 10px
+            font-size: 4.5vmin
+            font-weight: bold
+            border-radius: 10px
+            @include mix.mediaScreen(0, 600px )
+                grid-column: 1
+
+.todo-list
+    border-top: 2px dashed black
+    display: grid
+    grid-template-columns: 23.9% 23.9% 23.9% 23.9%
+    padding: 1em
+    gap: 1.5%
+    @include mix.mediaScreen(426px, 1000px )
+        grid-template-columns: 49.3% 49.3%
+    @include mix.mediaScreen(0, 425px )
+        grid-template-columns: 100%
+
+    .todo-item
+        border: 4px double black
+        padding: 0 10px
+        border-radius: 5px
+        box-shadow: 8px 8px 10px .5px #0000003d
+        display: flex
+        flex-direction: column
+
+        &__dot
+            width: 10px
+            height: 10px
+            background-color: black
+            border-radius: 50%
+            margin: 15px auto 10px auto
+
+        &__title
+            font-size: 3vmin
+            margin-top: 0
+            margin-bottom: 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 5vmin
+
+        &__description
+            font-size: 2.2vmin
+            margin-top: 0
+            margin-bottom: 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 3.8vmin
+
+        &__status
+            font-size: 2.5vmin
+            margin-top: 0
+            margin-bottom: 15px
+            font-style: italic
+            @include mix.mediaScreen(0, 600px )
+                font-size: 4vmin
+        
+        &__buttons
+            display: flex
+            justify-content: space-between
+            margin-top: auto
+            margin-bottom: 10px
+
+        &__delete-btn, 
+        &__edit-btn
+            font-size: 2.5vmin
+            text-decoration: underline
+            border-radius: 5px
+            line-height: 0
+            padding: 8px 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 4vmin
+        
+        &__edit-btn
+            color: #37b137
+            border: 2px solid #37b137
+
+        &__delete-btn
+            color: #dc5a5a
+            border: 2px solid #dc5a5a
+
+.todo-edit
+    padding: 10px
+
+    .todo-item
+        border: 7px double black
+        border-radius: 10px
+        text-align: center
+
+        &__dot
+            width: 15px
+            height: 15px
+            background-color: black
+            border-radius: 50%
+            margin: 15px auto 10px auto
+
+        &__title
+            font-size: 5vmin
+            margin-top: 0
+            margin-bottom: 20px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 8vmin
+
+        &__description
+            font-size: 4vmin
+            margin-top: 0
+            margin-bottom: 20px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 7vmin
+
+        &__status
+            font-size: 4vmin
+            margin-top: 0
+            margin-bottom: 20px
+            font-style: italic
+            @include mix.mediaScreen(0, 600px )
+                font-size: 7vmin
+
+        &__home-btn
+            font-size: 3.5vmin
+            text-decoration: underline
+            margin-bottom: 1em
+            border-radius: 5px
+            padding: 5px 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 6vmin
+
+.todo-put-box
+    position: fixed
+    width: 100%
+    bottom: 0
+    background-color: #00000014
+    border-radius: 20px 20px 0 0
+
+    .todo-put
+        display: flex
+        flex-direction: column
+        text-align: center
+        padding: 0 20px
+
+        &__title
+            font-size: 5vmin
+            margin-top: 20px
+            margin-bottom: 1em
+            @include mix.mediaScreen(0, 600px )
+                font-size: 8vmin
+
+        .put-form
+            display: grid
+            grid-template-columns: auto auto auto
+            gap: 10px
+            @include mix.mediaScreen(0, 600px )
+                grid-template-columns: auto
+
+            label
+                display: flex
+                font-size: 3vmin
+                @include mix.mediaScreen(0, 600px )
+                    font-size: 5vmin
+                
+                textarea
+                    font-size: 2vmin
+                    resize: none
+                    height: 50%
+                    width: 100%
+                    @include mix.mediaScreen(0, 600px )
+                        font-size: 4vmin
+
+                input
+                    font-size: 2vmin
+                    height: 50%
+                    width: auto
+                    @include mix.mediaScreen(0, 600px )
+                        font-size: 4vmin
+
+                    &[type="checkbox"]
+                        width: 30px
+                span
+                    margin-bottom: 1.5em
+                    margin-right: 10px
+
+            button
+                grid-column: 1/4
+                padding: 10px
+                font-size: 4.5vmin
+                font-weight: bold
+                border-radius: 10px
+                margin-bottom: 1em
+                @include mix.mediaScreen(0, 600px )
+                    grid-column: 1
