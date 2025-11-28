@@ -62,19 +62,21 @@
 .todo-list
     border-top: 2px dashed black
     display: grid
-    grid-template-columns: auto auto auto auto
+    grid-template-columns: 23.9% 23.9% 23.9% 23.9%
     padding: 1em
-    gap: 1em
+    gap: 1.5%
     @include mix.mediaScreen(426px, 1000px )
-        grid-template-columns: auto auto
+        grid-template-columns: 49.3% 49.3%
     @include mix.mediaScreen(0, 425px )
-        grid-template-columns: auto
+        grid-template-columns: 100%
 
     .todo-item
         border: 4px double black
         padding: 0 10px
         border-radius: 5px
         box-shadow: 8px 8px 10px .5px #0000003d
+        display: flex
+        flex-direction: column
 
         &__dot
             width: 10px
@@ -91,32 +93,43 @@
                 font-size: 5vmin
 
         &__description
-            font-size: 2.5vmin
+            font-size: 2.2vmin
             margin-top: 0
             margin-bottom: 10px
             @include mix.mediaScreen(0, 600px )
-                font-size: 4vmin
+                font-size: 3.8vmin
 
         &__status
             font-size: 2.5vmin
             margin-top: 0
-            margin-bottom: 10px
+            margin-bottom: 15px
             font-style: italic
             @include mix.mediaScreen(0, 600px )
                 font-size: 4vmin
         
+        &__buttons
+            display: flex
+            justify-content: space-between
+            margin-top: auto
+            margin-bottom: 10px
+
         &__delete-btn, 
         &__edit-btn
-            font-size: 2vmin
+            font-size: 2.5vmin
             text-decoration: underline
-            margin-bottom: 10px
             border-radius: 5px
-            padding: 5px 10px
+            line-height: 0
+            padding: 8px 10px
             @include mix.mediaScreen(0, 600px )
-                font-size: 3.5vmin
+                font-size: 4vmin
         
+        &__edit-btn
+            color: #37b137
+            border: 2px solid #37b137
+
         &__delete-btn
-            margin-right: 5px
+            color: #dc5a5a
+            border: 2px solid #dc5a5a
 
 .todo-edit
     padding: 10px

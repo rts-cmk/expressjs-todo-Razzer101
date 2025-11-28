@@ -1,3 +1,5 @@
+import { FaRegTrashAlt } from "react-icons/fa";
+
 export default function DELETE({ id, update, setUpdate }){
 
     const deleteHandler = () => {
@@ -10,7 +12,7 @@ export default function DELETE({ id, update, setUpdate }){
 
     return(
         <>
-            <button className="todo-item__delete-btn" onClick={() => deleteHandler()}>Fjern denne todo?</button>
+            <button className="todo-item__delete-btn" onClick={() => deleteHandler()}><FaRegTrashAlt/></button>
         </>
     )
 }
