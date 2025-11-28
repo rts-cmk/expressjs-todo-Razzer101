@@ -56,6 +56,7 @@
         border: 4px double black
         padding: 0 10px
         border-radius: 5px
+        box-shadow: 8px 8px 10px .5px #0000003d
 
         &__dot
             width: 10px
@@ -90,3 +91,93 @@
         
         &__delete-btn
             margin-right: 5px
+
+.todo-edit
+    padding: 10px
+
+    .todo-item
+        border: 4px double black
+        border-radius: 5px
+        text-align: center
+
+        &__dot
+            width: 2vmin
+            height: 2vmin
+            background-color: black
+            border-radius: 50%
+            margin: 15px auto 10px auto
+
+        &__title
+            font-size: 5vmin
+            margin-top: 0
+            margin-bottom: 20px
+
+        &__description
+            font-size: 4vmin
+            margin-top: 0
+            margin-bottom: 20px
+
+        &__status
+            font-size: 4vmin
+            margin-top: 0
+            margin-bottom: 20px
+            font-style: italic
+
+        &__home-btn
+            font-size: 3.5vmin
+            text-decoration: underline
+            margin-bottom: 1em
+            border-radius: 5px
+            padding: 5px 10px
+
+.todo-put-box
+    position: fixed
+    width: 100%
+    bottom: 0
+    background-color: #00000014
+    border-radius: 20px 20px 0 0
+
+    .todo-put
+        display: flex
+        flex-direction: column
+        text-align: center
+        padding: 0 20px
+
+        &__title
+            font-size: 5vmin
+            margin-top: 20px
+            margin-bottom: .8em
+
+        .put-form
+            display: grid
+            grid-template-columns: auto auto auto
+
+            label
+                display: flex
+                font-size: 3vmin
+                
+                textarea
+                    font-size: 2vmin
+                    resize: none
+                    height: 50%
+                    width: 100%
+
+                input
+                    font-size: 2vmin
+                    height: 50%
+                    width: auto
+
+                    &[type="checkbox"]
+                        width: 10%
+
+                span
+                    margin-bottom: 1.5em
+                    margin-right: 10px
+
+            button
+                grid-column: 1/4
+                padding: 10px
+                font-size: 2em
+                font-weight: bold
+                border-radius: 10px
+                margin-bottom: 20px

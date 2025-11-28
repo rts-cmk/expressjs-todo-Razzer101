@@ -6,8 +6,6 @@ export default function Todos(){
 
     const [update, setUpdate] = useState(true)
 
-
-
     return(
         <>
             <POST update={update} setUpdate={setUpdate}/>

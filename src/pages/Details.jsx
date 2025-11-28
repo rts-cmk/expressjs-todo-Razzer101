@@ -1,40 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router"
+import TodoDetail from "../components/TodoDetail"
+import PUT from "../components/PUT"
 
 export default function Details(){
 
     const [findTodoData, setFindToDoData] = useState(null)
+    const [update, setUpdate] = useState(true)
+    const params = useParams()
 
-    const findIdHandler = event => {
-        event.preventDefault()
-
-        const formData = new FormData(event.target)
-
-        const data = Object.fromEntries(formData)
-
-        fetch(`http://localhost:3000/todos/${data.id}`)
+    useEffect(() => {
+        fetch(`http://localhost:3000/todos/${params.id}`)
         .then(response => response.json())
         .then(data => setFindToDoData(data))
-
-    }
+    },[update])
 
     return(
         <>
-            <form onSubmit={findIdHandler}>
-                <label htmlFor="id">
-                    <span>Indtast todo nr: </span>
-                    <input type="number" name="id" id="id" />
-                </label>
-                <br />
-                <button type="submit">Find</button>
-            </form>
-            {
-                findTodoData !== null &&
-                <article>
-                    <h2>{findTodoData.id}: {findTodoData.title}</h2>
-                    <p>{findTodoData.description}</p>
-                    <p>Status: {findTodoData?.done && findTodoData?.done !== undefined ? "færdig" : "ikke færdig"}</p>
-                </article>
-            }
+            <TodoDetail data={findTodoData}/>
+            <PUT data={findTodoData} update={update} setUpdate={setUpdate}/>
         </>
     )
 }

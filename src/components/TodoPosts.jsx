@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import DELETE from "./DELETE"
-import { Link, useNavigate } from "react-router"
+import { useNavigate } from "react-router"
 
 export default function TodoPosts({ update }){
     
@@ -27,7 +27,7 @@ export default function TodoPosts({ update }){
                         <p className="todo-item__description">{elm.description}</p>
                         <p className="todo-item__status" style={{color: elm?.done && elm?.done !== undefined ? "#1ca329ff" : "#d51717ff"}}>Status: {elm?.done && elm?.done !== undefined ? "færdig" : "ikke færdig"}</p>
                         <DELETE id={elm.id} update={deletionUpdate} setUpdate={setDeletionUpdate}/>
-                        <button className="todo-item__edit-btn" onClick={() => navigate("/")}>Ændre todo?</button>
+                        <button className="todo-item__edit-btn" onClick={() => navigate(`/details/${elm.id}`)}>Ændre todo?</button>
                     </article>
                 )
             })
