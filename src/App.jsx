@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import Details from "./pages/Details"
 import Todos from "./pages/todos"
-import Delete from "./pages/Delete"
 import Put from "./pages/Put"
 
 function App() {
@@ -11,9 +10,6 @@ function App() {
     },{
       path: "/details",
       element: <Details/>,
-    },{
-      path: "/delete",
-      element: <Delete/>,
     },{
       path: "/put",
       element: <Put/>,
