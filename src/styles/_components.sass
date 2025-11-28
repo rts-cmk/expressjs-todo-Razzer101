@@ -1,3 +1,5 @@
+@use "mixins" as mix
+    
 .todo-post
     display: flex
     flex-direction: column
@@ -11,29 +13,39 @@
         font-size: 5vmin
         margin-top: 10px
         margin-bottom: .8em
+        @include mix.mediaScreen(0, 600px )
+            font-size: 8vmin
 
     .todo-form
         display: grid
         grid-template-columns: auto auto auto
+        gap: 10px
+        @include mix.mediaScreen(0, 600px )
+            grid-template-columns: auto
 
         label
             display: flex
             font-size: 3vmin
+            @include mix.mediaScreen(0, 600px )
+                font-size: 5vmin
             
             textarea
                 font-size: 2vmin
                 resize: none
                 height: 50%
                 width: 100%
+                @include mix.mediaScreen(0, 600px )
+                    font-size: 4vmin
 
             input
                 font-size: 2vmin
                 height: 50%
                 width: auto
+                @include mix.mediaScreen(0, 600px )
+                    font-size: 4vmin
 
                 &[type="checkbox"]
-                    width: 10%
-
+                    width: 30px
             span
                 margin-bottom: 1em
                 margin-right: 10px
@@ -41,16 +53,22 @@
         button
             grid-column: 1/4
             padding: 10px
-            font-size: 2em
+            font-size: 4.5vmin
             font-weight: bold
             border-radius: 10px
+            @include mix.mediaScreen(0, 600px )
+                grid-column: 1
 
 .todo-list
     border-top: 2px dashed black
     display: grid
-    grid-template-columns: 25% 25% 25% 25%
+    grid-template-columns: auto auto auto auto
     padding: 1em
     gap: 1em
+    @include mix.mediaScreen(426px, 1000px )
+        grid-template-columns: auto auto
+    @include mix.mediaScreen(0, 425px )
+        grid-template-columns: auto
 
     .todo-item
         border: 4px double black
@@ -69,17 +87,23 @@
             font-size: 3vmin
             margin-top: 0
             margin-bottom: 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 5vmin
 
         &__description
             font-size: 2.5vmin
             margin-top: 0
             margin-bottom: 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 4vmin
 
         &__status
             font-size: 2.5vmin
             margin-top: 0
             margin-bottom: 10px
             font-style: italic
+            @include mix.mediaScreen(0, 600px )
+                font-size: 4vmin
         
         &__delete-btn, 
         &__edit-btn
@@ -88,6 +112,8 @@
             margin-bottom: 10px
             border-radius: 5px
             padding: 5px 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 3.5vmin
         
         &__delete-btn
             margin-right: 5px
@@ -96,13 +122,13 @@
     padding: 10px
 
     .todo-item
-        border: 4px double black
-        border-radius: 5px
+        border: 7px double black
+        border-radius: 10px
         text-align: center
 
         &__dot
-            width: 2vmin
-            height: 2vmin
+            width: 15px
+            height: 15px
             background-color: black
             border-radius: 50%
             margin: 15px auto 10px auto
@@ -111,17 +137,23 @@
             font-size: 5vmin
             margin-top: 0
             margin-bottom: 20px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 8vmin
 
         &__description
             font-size: 4vmin
             margin-top: 0
             margin-bottom: 20px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 7vmin
 
         &__status
             font-size: 4vmin
             margin-top: 0
             margin-bottom: 20px
             font-style: italic
+            @include mix.mediaScreen(0, 600px )
+                font-size: 7vmin
 
         &__home-btn
             font-size: 3.5vmin
@@ -129,6 +161,8 @@
             margin-bottom: 1em
             border-radius: 5px
             padding: 5px 10px
+            @include mix.mediaScreen(0, 600px )
+                font-size: 6vmin
 
 .todo-put-box
     position: fixed
@@ -146,30 +180,40 @@
         &__title
             font-size: 5vmin
             margin-top: 20px
-            margin-bottom: .8em
+            margin-bottom: 1em
+            @include mix.mediaScreen(0, 600px )
+                font-size: 8vmin
 
         .put-form
             display: grid
             grid-template-columns: auto auto auto
+            gap: 10px
+            @include mix.mediaScreen(0, 600px )
+                grid-template-columns: auto
 
             label
                 display: flex
                 font-size: 3vmin
+                @include mix.mediaScreen(0, 600px )
+                    font-size: 5vmin
                 
                 textarea
                     font-size: 2vmin
                     resize: none
                     height: 50%
                     width: 100%
+                    @include mix.mediaScreen(0, 600px )
+                        font-size: 4vmin
 
                 input
                     font-size: 2vmin
                     height: 50%
                     width: auto
+                    @include mix.mediaScreen(0, 600px )
+                        font-size: 4vmin
 
                     &[type="checkbox"]
-                        width: 10%
-
+                        width: 30px
                 span
                     margin-bottom: 1.5em
                     margin-right: 10px
@@ -177,7 +221,9 @@
             button
                 grid-column: 1/4
                 padding: 10px
-                font-size: 2em
+                font-size: 4.5vmin
                 font-weight: bold
                 border-radius: 10px
-                margin-bottom: 20px
+                margin-bottom: 1em
+                @include mix.mediaScreen(0, 600px )
+                    grid-column: 1
